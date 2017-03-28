@@ -19,7 +19,7 @@ The goals / steps of this project are the following:
 [image7]: ./examples/placeholder_small.png "Flipped Image"
 [image_left]: ./examples/left_turn.jpg "left turn"
 [image_right]: ./examples/right_turn.jpg "right turn"
-[histogram]: ./examples/histogram.jpg "histogram"
+[histogram]: ./examples/histograms.png "histogram"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
@@ -82,9 +82,9 @@ After training with the initial data, the car is able to drive almost all the si
 
 At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road.
 
-![alt text][image_left]
+![The difficult left turn][image_left]
 
-![alt text][image_right]
+![The difficult right turn][image_right]
 
 #### 2. Final Model Architecture
 
