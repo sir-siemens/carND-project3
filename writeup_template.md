@@ -57,7 +57,7 @@ The neural network consists of a convolution neural network with 5x5 and 3x3 fil
 
 #### 2. Attempts to reduce overfitting in the model
 * The model contains dropout layers in order to reduce overfitting.
-* 6 recorded datasets are used to train the model. Two of them which represent two difficult turns are used to fine-tune the model. The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
+* Six recorded datasets are used to train the model. Two of them which represent two difficult turns are used to fine-tune the model. The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
 
 #### 3. Model parameter tuning
 
@@ -86,6 +86,8 @@ At the end of the process, the vehicle is able to drive autonomously around the 
 
 ![The difficult right turn][image_right]
 
+One difficult left turn and right turn that I record additional data for fine tuning the model. 
+
 #### 2. Final Model Architecture
 
 The final neural network consists of a convolution neural network with 5x5 and 3x3 filter sizes. The depths are between 24 and 64. All the conv layers contain RELUs. After the conv layers, 4 fully connected layers are used. The dimension of the outputs are  100->50->10->1. To avoid overfitting, I add Dropout layer with a dropout rate of 0,5 between the FC layers.   
@@ -96,11 +98,7 @@ I record the data using a ps3 joystick which allows me to generate smooth data e
 
 ![alt text][histogram]
 
-
-I also tried using the flipped images to augment the data, however, in my case, it turns out help that much. The model performs worse than when I do not use these data. 
-
-![alt text][image6]
-![alt text][image7]
+I also tried using the flipped images to augment the data, however, in my case, it doesn't turn out help that much. The model performs worse than without using flipped image. 
 
 After the collection process, I had about 10000 number of data points. By using the left and right images, I have 3 times more training data. I randomly shuffled the data set and put 20% of the data into a validation set. 
 
