@@ -1,11 +1,3 @@
-#**Behavioral Cloning** 
-
-##Writeup Template
-
-###You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
-
----
-
 **Behavioral Cloning Project**
 
 The goals / steps of this project are the following:
@@ -25,6 +17,9 @@ The goals / steps of this project are the following:
 [image5]: ./examples/placeholder_small.png "Recovery Image"
 [image6]: ./examples/placeholder_small.png "Normal Image"
 [image7]: ./examples/placeholder_small.png "Flipped Image"
+[image_left]: ./examples/left_turn.jpg "left turn"
+[image_right]: ./examples/right_turn.jpg "right turn"
+[histogram]: ./examples/histogram.jpg "histogram"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
@@ -87,6 +82,10 @@ After training with the initial data, the car is able to drive almost all the si
 
 At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road.
 
+![alt text][image_left]
+
+![alt text][image_right]
+
 #### 2. Final Model Architecture
 
 The final neural network consists of a convolution neural network with 5x5 and 3x3 filter sizes. The depths are between 24 and 64. All the conv layers contain RELUs. After the conv layers, 4 fully connected layers are used. The dimension of the outputs are  100->50->10->1. To avoid overfitting, I add Dropout layer with a dropout rate of 0,5 between the FC layers.   
@@ -95,10 +94,8 @@ The final neural network consists of a convolution neural network with 5x5 and 3
 
 I record the data using a ps3 joystick which allows me to generate smooth data especially for the turns. I record two complete laps with different driving directions so that the training data also contains right turns. I also record additional  data in which I most concentrate on the turns. During recording, I run the simulator at a lower speed, so I can fine control the car and get good training examples at the turn. The following histogram shows the distribution of steering angles for each training set.
 
-![alt text][image2]
-![alt text][image3]
-![alt text][image4]
-![alt text][image5]
+![alt text][histogram]
+
 
 I also tried using the flipped images to augment the data, however, in my case, it turns out help that much. The model performs worse than when I do not use these data. 
 
